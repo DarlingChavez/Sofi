@@ -16,6 +16,8 @@ namespace Sofi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
             Application.Run(new FrmMain());
         }
     }
