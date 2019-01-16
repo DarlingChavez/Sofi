@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DC.Sofi.Domain.Seguridad
 {
     [Table("Usuario", Schema = "Seguridad")]
-    public class Usuario
+    public class Usuario : BaseEntity
     {
         [Key]
         [StringLength(15)]
-        public string UserName { get; set; }
+        public string UserName
+        {
+            get { return base.Key.ToString(); }
+            set { base.Key = value; }
+        }
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
-        [Required]
-        [StringLength(1)]
-        public string Status { get; set; }
+
+        [ForeignKey("UserName")]
+        public virtual ICollection<MenuByUser> MenuByUser { get; set; }
     }
 }

@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DC.Sofi.Domain.Seguridad
 {
     [Table("MenuByUser", Schema = "Seguridad")]
-    public class MenuByUser
+    public class MenuByUser : BaseEntity
     {
-        [Key]
+        [Key, Column(Order = 0)]
         [ForeignKey("Usuario")]
         public string UserName { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         [ForeignKey("Menu")]
         public int IdMenu { get; set; }
         [Required]

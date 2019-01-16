@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DC.Sofi.Domain.Seguridad
 {
     [Table("Menu", Schema = "Seguridad")]
-    public class Menu
+    public class Menu : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdMenu { get; set; }
+        public int IdMenu
+        {
+            get { return Convert.ToInt32(base.Key); }
+            set { base.Key = value; }
+        }
         [Required]
         public int IdMenuPadre { get; set; }
         [Required]
@@ -25,8 +27,9 @@ namespace DC.Sofi.Domain.Seguridad
         public string NombreFormulario { get; set; }
         [StringLength(150)]
         public string NombreAsembly { get; set; }
-        [Required]
-        [StringLength(1)]
-        public string Status { get; set; }
+
+        [ForeignKey("IdMenu")]
+        public virtual ICollection<MenuByUser> MenuByUser { get; set; }
+
     }
 }

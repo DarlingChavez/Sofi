@@ -42,6 +42,7 @@
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,6 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DC.Sofi.Bo\DC.Sofi.Bo.csproj">
+      <Project>{81f6c9f1-d600-4f02-ba4a-9e0c1bdf6bec}</Project>
+      <Name>DC.Sofi.Bo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DC.Sofi.Domain\DC.Sofi.Domain.csproj">
+      <Project>{51c54684-7e15-492f-9415-2d1fc8854f73}</Project>
+      <Name>DC.Sofi.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
