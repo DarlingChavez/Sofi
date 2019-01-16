@@ -50,6 +50,11 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DbContextSeguridad.cs" />
+    <Compile Include="Migrations\201901162128369_InitialDb.cs" />
+    <Compile Include="Migrations\201901162128369_InitialDb.Designer.cs">
+      <DependentUpon>201901162128369_InitialDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +66,11 @@
       <Project>{51c54684-7e15-492f-9415-2d1fc8854f73}</Project>
       <Name>DC.Sofi.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901162128369_InitialDb.resx">
+      <DependentUpon>201901162128369_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
