@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.Dao", "DC.Sofi.Dao\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.Bo", "DC.Sofi.Bo\DC.Sofi.Bo.csproj", "{81F6C9F1-D600-4F02-BA4A-9E0C1BDF6BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.UI.WinForm", "DC.Sofi.UI.WinForm\DC.Sofi.UI.WinForm.csproj", "{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{81F6C9F1-D600-4F02-BA4A-9E0C1BDF6BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F6C9F1-D600-4F02-BA4A-9E0C1BDF6BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F6C9F1-D600-4F02-BA4A-9E0C1BDF6BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,7 +17,7 @@ namespace DC.Sofi.Bo
 
         public MenuBo()
         {
-            _context = new DbContextSeguridad();
+            _context = new DbContextSeguridad(Param.DefaultConnectionString);
             menuDao = new BaseRepository<Menu>(_context);
             menuByUserDao = new BaseRepository<MenuByUser>(_context);
             usuarioDao = new BaseRepository<Usuario>(_context);
