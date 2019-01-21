@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DC.Sofi.Domain;
+using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Linq.Expressions;
-using DC.Sofi.Domain;
 
 namespace DC.Sofi.Dao
 {
     public sealed class BaseRepository<T> where T : BaseEntity
     {
-        
+
         private DbContext _dbContext;
 
         public BaseRepository(DbContext dbContext)

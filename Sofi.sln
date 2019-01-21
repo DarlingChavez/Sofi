@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.Bo", "DC.Sofi.Bo\DC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.UI.WinForm", "DC.Sofi.UI.WinForm\DC.Sofi.UI.WinForm.csproj", "{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Sofi.UI.UserControl", "DC.Sofi.UI.UserControl\DC.Sofi.UI.UserControl.csproj", "{86AB1A6A-51F2-4E68-B78F-9B1ED8E94347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC9B0BF1-3B5C-4A2E-948A-9AC3B4ADC87B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86AB1A6A-51F2-4E68-B78F-9B1ED8E94347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86AB1A6A-51F2-4E68-B78F-9B1ED8E94347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86AB1A6A-51F2-4E68-B78F-9B1ED8E94347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86AB1A6A-51F2-4E68-B78F-9B1ED8E94347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

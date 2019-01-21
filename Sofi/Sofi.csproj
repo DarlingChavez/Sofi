@@ -99,6 +99,10 @@
       <Project>{51c54684-7e15-492f-9415-2d1fc8854f73}</Project>
       <Name>DC.Sofi.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DC.Sofi.UI.UserControl\DC.Sofi.UI.UserControl.csproj">
+      <Project>{86ab1a6a-51f2-4e68-b78f-9b1ed8e94347}</Project>
+      <Name>DC.Sofi.UI.UserControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\previo.png" />

@@ -1,10 +1,8 @@
 ﻿using DC.Sofi.Dao;
-using DC.Sofi.Domain;
 using DC.Sofi.Domain.Seguridad;
 using System;
-using System.Linq;
-using System.Data.Entity;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DC.Sofi.Bo
 {
@@ -30,6 +28,6 @@ namespace DC.Sofi.Bo
             var list = query.ToList();
             return list;
         }
-        
+
     }
 }
