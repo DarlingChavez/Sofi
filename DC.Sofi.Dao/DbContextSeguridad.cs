@@ -9,9 +9,11 @@ namespace DC.Sofi.Dao
     {
         public DbContextSeguridad() : base("name=DefaultConnectionString")
         {
+            
         }
         public DbContextSeguridad(string connectionString) : base(connectionString)
         {
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

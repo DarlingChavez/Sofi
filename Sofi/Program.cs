@@ -4,6 +4,8 @@ using System;
 using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
+using DC.Sofi.UI.WinForm;
+using DC.Sofi.Bo;
 
 namespace Sofi
 {
@@ -24,10 +26,11 @@ namespace Sofi
 
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(feel);
 
-            string defaultConnectionString = ConfigurationManager.AppSettings["DefaultConnectionString"].ToString();
-            DC.Sofi.Bo.Param.DefaultConnectionString = defaultConnectionString;
+            string defaultConnectionString = ConfigurationManager.AppSettings["defaultcn"].ToString();
+            //Param.DefaultConnectionString = ConfigurationManager.ConnectionStrings[defaultConnectionString].ConnectionString;
+            Param.DefaultConnectionString = defaultConnectionString;
 
-            Application.Run(new FrmMain());
+            Application.Run(new DC.Sofi.UI.WinForm.Seguridad.FrmMain());
         }
     }
 }

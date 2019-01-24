@@ -32,7 +32,8 @@ namespace DC.Sofi.UI.UserControl.Seguridad
             if (hi.Node != null)
             {
                 lastNodeSelected = hi.Node;
-                DoubleClickEvent(LastSelected);
+                var tag = treeListMenu.GetDataRecordByNode(lastNodeSelected);
+                DoubleClickEvent(tag);
             }
         }
 

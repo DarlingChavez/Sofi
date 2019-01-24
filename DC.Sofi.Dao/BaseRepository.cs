@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace DC.Sofi.Dao
 {
-    public sealed class BaseRepository<T> where T : BaseEntity
+    public class BaseRepository<T> where T : BaseEntity
     {
 
         private DbContext _dbContext;

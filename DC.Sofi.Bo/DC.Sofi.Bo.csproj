@@ -48,9 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuBo.cs" />
+    <Compile Include="Seguridad\MenuBo.cs" />
     <Compile Include="Param.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\UsuarioBo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DC.Sofi.Dao\DC.Sofi.Dao.csproj">

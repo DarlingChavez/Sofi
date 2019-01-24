@@ -61,6 +61,24 @@ namespace DC.Sofi.UI.WinForm.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Mensage del sistema.
+        /// </summary>
+        internal static string MessaBoxTittle {
+            get {
+                return ResourceManager.GetString("MessaBoxTittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SOFI.
+        /// </summary>
+        internal static string Sistema {
+            get {
+                return ResourceManager.GetString("Sistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap usuarios {

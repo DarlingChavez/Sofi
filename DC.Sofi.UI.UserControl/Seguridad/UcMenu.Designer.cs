@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControlTop = new DevExpress.XtraEditors.PanelControl();
             this.searchControlMenu = new DevExpress.XtraEditors.SearchControl();
             this.treeListMenu = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumnDescripcion = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.menuBindingSource = new System.Windows.Forms.BindingSource();
             this.panelControlFill = new DevExpress.XtraEditors.PanelControl();
-            this.menuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTop)).BeginInit();
             this.panelControlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlMenu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFill)).BeginInit();
             this.panelControlFill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlTop
@@ -72,10 +71,12 @@
             this.treeListColumnDescripcion});
             this.treeListMenu.DataSource = this.menuBindingSource;
             this.treeListMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListMenu.KeyFieldName = "IdMenu";
             this.treeListMenu.Location = new System.Drawing.Point(2, 2);
             this.treeListMenu.Name = "treeListMenu";
             this.treeListMenu.OptionsView.ShowColumns = false;
             this.treeListMenu.OptionsView.ShowIndicator = false;
+            this.treeListMenu.ParentFieldName = "IdMenuPadre";
             this.treeListMenu.Size = new System.Drawing.Size(238, 406);
             this.treeListMenu.TabIndex = 0;
             this.treeListMenu.DoubleClick += new System.EventHandler(this.treeListMenu_DoubleClick);
@@ -88,6 +89,10 @@
             this.treeListColumnDescripcion.Visible = true;
             this.treeListColumnDescripcion.VisibleIndex = 0;
             // 
+            // menuBindingSource
+            // 
+            this.menuBindingSource.DataSource = typeof(DC.Sofi.Domain.Seguridad.Menu);
+            // 
             // panelControlFill
             // 
             this.panelControlFill.Controls.Add(this.treeListMenu);
@@ -96,10 +101,6 @@
             this.panelControlFill.Name = "panelControlFill";
             this.panelControlFill.Size = new System.Drawing.Size(242, 410);
             this.panelControlFill.TabIndex = 1;
-            // 
-            // menuBindingSource
-            // 
-            this.menuBindingSource.DataSource = typeof(DC.Sofi.Domain.Seguridad.Menu);
             // 
             // UcMenu
             // 
@@ -113,9 +114,9 @@
             this.panelControlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControlMenu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFill)).EndInit();
             this.panelControlFill.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

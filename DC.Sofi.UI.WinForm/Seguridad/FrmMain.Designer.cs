@@ -1,4 +1,4 @@
-﻿namespace Sofi
+﻿namespace DC.Sofi.UI.WinForm.Seguridad
 {
     partial class FrmMain
     {
@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.dockManagerPrincipal = new DevExpress.XtraBars.Docking.DockManager();
             this.barManagerPrincipal = new DevExpress.XtraBars.BarManager();
-            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barMenu = new DevExpress.XtraBars.Bar();
             this.barSubItemSistema = new DevExpress.XtraBars.BarSubItem();
             this.barSubItemTemas = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemMenu = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemReiniciar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemSalir = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barStatus = new DevExpress.XtraBars.Bar();
             this.barStaticItemUsuario = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -74,8 +74,8 @@
             // barManagerPrincipal
             // 
             this.barManagerPrincipal.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar3});
+            this.barMenu,
+            this.barStatus});
             this.barManagerPrincipal.DockControls.Add(this.barDockControlTop);
             this.barManagerPrincipal.DockControls.Add(this.barDockControlBottom);
             this.barManagerPrincipal.DockControls.Add(this.barDockControlLeft);
@@ -89,22 +89,22 @@
             this.barButtonItemMenu,
             this.barButtonItemReiniciar,
             this.barButtonItemSalir});
-            this.barManagerPrincipal.MainMenu = this.bar2;
+            this.barManagerPrincipal.MainMenu = this.barMenu;
             this.barManagerPrincipal.MaxItemId = 7;
-            this.barManagerPrincipal.StatusBar = this.bar3;
+            this.barManagerPrincipal.StatusBar = this.barStatus;
             // 
-            // bar2
+            // barMenu
             // 
-            this.bar2.BarName = "Menú principal";
-            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.barMenu.BarName = "Menú principal";
+            this.barMenu.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
+            this.barMenu.DockCol = 0;
+            this.barMenu.DockRow = 0;
+            this.barMenu.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.barMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemSistema)});
-            this.bar2.OptionsBar.AllowQuickCustomization = false;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Menú principal";
+            this.barMenu.OptionsBar.AllowQuickCustomization = false;
+            this.barMenu.OptionsBar.UseWholeRow = true;
+            this.barMenu.Text = "Menú principal";
             // 
             // barSubItemSistema
             // 
@@ -143,19 +143,19 @@
             this.barButtonItemSalir.Name = "barButtonItemSalir";
             this.barButtonItemSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSalir_ItemClick);
             // 
-            // bar3
+            // barStatus
             // 
-            this.bar3.BarName = "Barra de estado";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.barStatus.BarName = "Barra de estado";
+            this.barStatus.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.barStatus.DockCol = 0;
+            this.barStatus.DockRow = 0;
+            this.barStatus.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.barStatus.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItemUsuario)});
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Barra de estado";
+            this.barStatus.OptionsBar.AllowQuickCustomization = false;
+            this.barStatus.OptionsBar.DrawDragBorder = false;
+            this.barStatus.OptionsBar.UseWholeRow = true;
+            this.barStatus.Text = "Barra de estado";
             // 
             // barStaticItemUsuario
             // 
@@ -255,8 +255,8 @@
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarManager barManagerPrincipal;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.Bar barMenu;
+        private DevExpress.XtraBars.Bar barStatus;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;

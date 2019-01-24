@@ -19,7 +19,9 @@ namespace DC.Sofi.Domain.Seguridad
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
-
+        [Required]
+        [StringLength(80)]
+        public string Descripcion { get; set; }
         [ForeignKey("UserName")]
         public virtual ICollection<MenuByUser> MenuByUser { get; set; }
     }

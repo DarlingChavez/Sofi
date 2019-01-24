@@ -4,28 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DC.Sofi.Bo
+namespace DC.Sofi.Bo.Seguridad
 {
     public class MenuBo
     {
         private DbContextSeguridad _context;
-        private BaseRepository<Menu> menuDao;
         private BaseRepository<MenuByUser> menuByUserDao;
-        private BaseRepository<Usuario> usuarioDao;
 
         public MenuBo()
         {
             _context = new DbContextSeguridad(Param.DefaultConnectionString);
-            menuDao = new BaseRepository<Menu>(_context);
             menuByUserDao = new BaseRepository<MenuByUser>(_context);
-            usuarioDao = new BaseRepository<Usuario>(_context);
-
         }
 
-        public List<MenuByUser> MenuOfUser(string userName)
+        public List<Menu> MenuOfUser(string userName)
         {
             var query = menuByUserDao.Find(x => x.UserName.Equals(userName));
-            var list = query.ToList();
+            var list = query.Select(x=>x.Menu).ToList();
             return list;
         }
 
