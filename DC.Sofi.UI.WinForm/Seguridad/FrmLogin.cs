@@ -19,20 +19,31 @@ namespace DC.Sofi.UI.WinForm.Seguridad
         private const string ErrorLogin = "Credenciales incorrectas, intente con otro usuario o revise su contraseña";
         private void simpleButtonIngresar_Click(object sender, EventArgs e)
         {
-            string usuario = textEditUsuario.Text;
-            string password = textEditPassword.Text;
-            UsuarioBo usuarioBo = new UsuarioBo();
-            bool valido = usuarioBo.Login(usuario, password);
-            if (valido)
+            try
             {
-                var entity = usuarioBo.Get(usuario);
-                Usuario = entity;
-                DialogResult = DialogResult.OK;
+                this.Cursor = Cursors.WaitCursor;
+                string usuario = textEditUsuario.Text;
+                string password = textEditPassword.Text;
+                UsuarioBo usuarioBo = new UsuarioBo();
+                bool valido = usuarioBo.Login(usuario, password);
+                if (valido)
+                {
+                    var entity = usuarioBo.Get(usuario);
+                    Usuario = entity;
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    XtraMessageBox.Show(ErrorLogin, Properties.Resources.MessaBoxTittle, MessageBoxButtons.OK);
+                    textEditUsuario.Focus();
+                }
+            }catch(Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message,Properties.Resources.MessaBoxTittle,MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            else
+            finally
             {
-                XtraMessageBox.Show(ErrorLogin, Properties.Resources.MessaBoxTittle, MessageBoxButtons.OK);
-                textEditUsuario.Focus();
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -49,5 +60,12 @@ namespace DC.Sofi.UI.WinForm.Seguridad
             }
         }
 
+        private void textEditPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                simpleButtonIngresar_Click(null, null);
+            }
+        }
     }
 }

@@ -44,7 +44,37 @@ namespace DC.Sofi.UI.WinForm.Seguridad
         private void UcMenuPrincipal_DoubleClickEvent(object tag)
         {
             Domain.Seguridad.Menu menu = (Domain.Seguridad.Menu)tag;
-            MessageBox.Show("open form " + menu.Descripcion);
+            if (menu.TieneFormulario)
+            {
+                System.Reflection.Assembly Ensamblado;
+                Ensamblado = System.Reflection.Assembly.LoadFrom(menu.NombreAsembly);
+                System.Reflection.AssemblyName assemblyName = Ensamblado.GetName();
+                Type type = Ensamblado.GetType(assemblyName.Name + "." + menu.NombreFormulario);
+                if (type == null)
+                {
+                    string errorensamblado = "Error al crear el ensamblado del formulario. Consulte con el departamento de sistemas";
+                    XtraMessageBox.Show(errorensamblado,
+                        Properties.Resources.MessaBoxTittle,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                    return;
+                }
+                string fullName = assemblyName.Name + "." + menu.NombreFormulario;
+                int posicion = menu.NombreFormulario.LastIndexOf('.');
+                string shortName = menu.NombreFormulario.Substring(posicion + 1, menu.NombreFormulario.Length - posicion - 1);
+                var existsForm = this.MdiChildren.Where(x => x.Name.Equals(shortName)).FirstOrDefault();
+                if (existsForm != null)
+                {
+                    existsForm.Activate();
+                    return;
+                }
+                object formObject = Activator.CreateInstance(type);
+                Form form = (Form)formObject;
+                form.Text = menu.Descripcion;
+                form.MdiParent = this;
+                form.Tag = menu;
+                form.Show();
+            }
         }
 
         private void barButtonItemSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

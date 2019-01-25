@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace DC.Sofi.UI.WinForm.Seguridad
 {
-    public partial class FrmMenu : DevExpress.XtraEditors.XtraForm
+    public partial class FrmMenu : XtraForm
     {
         public FrmMenu()
         {

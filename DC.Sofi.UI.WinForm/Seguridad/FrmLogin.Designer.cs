@@ -70,6 +70,7 @@
             this.textEditPassword.Properties.UseSystemPasswordChar = true;
             this.textEditPassword.Size = new System.Drawing.Size(143, 20);
             this.textEditPassword.TabIndex = 3;
+            this.textEditPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditPassword_KeyDown);
             // 
             // simpleButtonIngresar
             // 

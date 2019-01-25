@@ -59,7 +59,7 @@ namespace DC.Sofi.Dao.Migrations
                 IdMenuPadre = 1,
                 TieneFormulario = true,
                 NombreFormulario = "Seguridad.FrmMenu",
-                NombreAsembly = "DC.Sofi.UI.WinForm",
+                NombreAsembly = "DC.Sofi.UI.WinForm.dll",
                 Status = Domain.GlobalChars.Status.Activo,
                 MenuByUser = new List<MenuByUser>()
             };
@@ -69,8 +69,8 @@ namespace DC.Sofi.Dao.Migrations
                 Descripcion = "Usuarios",
                 IdMenuPadre = 1,
                 TieneFormulario = true,
-                NombreFormulario = "Seguridad.FrmUsuario",
-                NombreAsembly = "DC.Sofi.UI.WinForm",
+                NombreFormulario = "Seguridad.FrmUsuarios",
+                NombreAsembly = "DC.Sofi.UI.WinForm.dll",
                 Status = Domain.GlobalChars.Status.Activo,
                 MenuByUser = new List<MenuByUser>()
             };
@@ -81,7 +81,7 @@ namespace DC.Sofi.Dao.Migrations
                 IdMenuPadre = 1,
                 TieneFormulario = true,
                 NombreFormulario = "Seguridad.FrmPermisos",
-                NombreAsembly = "DC.Sofi.UI.WinForm",
+                NombreAsembly = "DC.Sofi.UI.WinForm.dll",
                 Status = Domain.GlobalChars.Status.Activo
             };
             menus.Add(permisos);
