@@ -7,6 +7,7 @@ using DC.Sofi.UI.WinForm.Seguridad;
 using DC.Sofi.Bo;
 using DC.Sofi.Bo.Seguridad;
 using DC.Sofi.Domain;
+using DevExpress.XtraBars.Docking2010;
 
 namespace DC.Sofi.UI.WinForm.Seguridad
 {

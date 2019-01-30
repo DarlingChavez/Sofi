@@ -43,13 +43,17 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanelMenu = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanelMenu_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.ucMenuPrincipal = new DC.Sofi.UI.UserControl.Seguridad.UcMenu();
+            this.documentManagerPrincipal = new DevExpress.XtraBars.Docking2010.DocumentManager();
+            this.tabbedViewPrincipal = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerPrincipal)).BeginInit();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
+            this.dockPanelMenu.SuspendLayout();
+            this.dockPanelMenu_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManagerPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedViewPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManagerPrincipal
@@ -57,7 +61,7 @@
             this.dockManagerPrincipal.Form = this;
             this.dockManagerPrincipal.MenuManager = this.barManagerPrincipal;
             this.dockManagerPrincipal.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
+            this.dockPanelMenu});
             this.dockManagerPrincipal.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -195,25 +199,25 @@
             this.barDockControlRight.Manager = this.barManagerPrincipal;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 384);
             // 
-            // dockPanel1
+            // dockPanelMenu
             // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
-            this.dockPanel1.ID = new System.Guid("0d54bdb8-7a14-4932-a35d-75e53573e54b");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 22);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(231, 200);
-            this.dockPanel1.SavedSizeFactor = 0D;
-            this.dockPanel1.Size = new System.Drawing.Size(231, 384);
-            this.dockPanel1.Text = "Menu";
+            this.dockPanelMenu.Controls.Add(this.dockPanelMenu_Container);
+            this.dockPanelMenu.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanelMenu.ID = new System.Guid("0d54bdb8-7a14-4932-a35d-75e53573e54b");
+            this.dockPanelMenu.Location = new System.Drawing.Point(0, 22);
+            this.dockPanelMenu.Name = "dockPanelMenu";
+            this.dockPanelMenu.OriginalSize = new System.Drawing.Size(231, 200);
+            this.dockPanelMenu.SavedSizeFactor = 0D;
+            this.dockPanelMenu.Size = new System.Drawing.Size(231, 384);
+            this.dockPanelMenu.Text = "Menu";
             // 
-            // dockPanel1_Container
+            // dockPanelMenu_Container
             // 
-            this.dockPanel1_Container.Controls.Add(this.ucMenuPrincipal);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(222, 357);
-            this.dockPanel1_Container.TabIndex = 0;
+            this.dockPanelMenu_Container.Controls.Add(this.ucMenuPrincipal);
+            this.dockPanelMenu_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanelMenu_Container.Name = "dockPanelMenu_Container";
+            this.dockPanelMenu_Container.Size = new System.Drawing.Size(222, 357);
+            this.dockPanelMenu_Container.TabIndex = 0;
             // 
             // ucMenuPrincipal
             // 
@@ -223,12 +227,20 @@
             this.ucMenuPrincipal.Size = new System.Drawing.Size(222, 357);
             this.ucMenuPrincipal.TabIndex = 0;
             // 
+            // documentManagerPrincipal
+            // 
+            this.documentManagerPrincipal.MdiParent = this;
+            this.documentManagerPrincipal.MenuManager = this.barManagerPrincipal;
+            this.documentManagerPrincipal.View = this.tabbedViewPrincipal;
+            this.documentManagerPrincipal.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedViewPrincipal});
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 431);
-            this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.dockPanelMenu);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -242,8 +254,10 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerPrincipal)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
+            this.dockPanelMenu.ResumeLayout(false);
+            this.dockPanelMenu_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentManagerPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedViewPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +265,8 @@
 
         #endregion
         private DevExpress.XtraBars.Docking.DockManager dockManagerPrincipal;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanelMenu;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanelMenu_Container;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarManager barManagerPrincipal;
         private DevExpress.XtraBars.Bar barMenu;
@@ -267,5 +281,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemReiniciar;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSalir;
         private DC.Sofi.UI.UserControl.Seguridad.UcMenu ucMenuPrincipal;
+        private DevExpress.XtraBars.Docking2010.DocumentManager documentManagerPrincipal;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedViewPrincipal;
     }
 }
