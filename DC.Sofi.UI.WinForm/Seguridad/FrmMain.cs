@@ -34,7 +34,10 @@ namespace DC.Sofi.UI.WinForm.Seguridad
                 var listMenu = menuBo.MenuOfUser(Param.ActiveUser.UserName);
                 ucMenuPrincipal.DataSource = listMenu;
                 barStaticItemUsuario.Caption = string.Format("{0} : {1}",StrUsuario,Param.ActiveUser.UserName);
-            }else if(result == DialogResult.Cancel)
+                dockPanelMenu.Show();
+                dockPanelMenu_Container.Focus();
+            }
+            else if(result == DialogResult.Cancel)
             {
                 Application.Exit();
             }
@@ -100,5 +103,21 @@ namespace DC.Sofi.UI.WinForm.Seguridad
             }
         }
 
+        private void barButtonItemMenu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            switch(dockPanelMenu.Visibility)
+            {
+                case DevExpress.XtraBars.Docking.DockVisibility.Hidden:
+                    dockPanelMenu.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+                    break;
+                case DevExpress.XtraBars.Docking.DockVisibility.AutoHide:
+                    dockPanelMenu.ShowSliding();
+                    break;
+                case DevExpress.XtraBars.Docking.DockVisibility.Visible:
+                    dockPanelMenu.Show();
+                    dockPanelMenu_Container.Focus();
+                    break;
+            }
+        }
     }
 }

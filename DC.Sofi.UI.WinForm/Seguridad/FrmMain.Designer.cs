@@ -59,9 +59,9 @@
             // dockManagerPrincipal
             // 
             this.dockManagerPrincipal.Form = this;
-            this.dockManagerPrincipal.MenuManager = this.barManagerPrincipal;
-            this.dockManagerPrincipal.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockManagerPrincipal.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
             this.dockPanelMenu});
+            this.dockManagerPrincipal.MenuManager = this.barManagerPrincipal;
             this.dockManagerPrincipal.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -132,6 +132,7 @@
             this.barButtonItemMenu.Caption = "Menú";
             this.barButtonItemMenu.Id = 4;
             this.barButtonItemMenu.Name = "barButtonItemMenu";
+            this.barButtonItemMenu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemMenu_ItemClick);
             // 
             // barButtonItemReiniciar
             // 
@@ -207,9 +208,12 @@
             this.dockPanelMenu.Location = new System.Drawing.Point(0, 22);
             this.dockPanelMenu.Name = "dockPanelMenu";
             this.dockPanelMenu.OriginalSize = new System.Drawing.Size(231, 200);
-            this.dockPanelMenu.SavedSizeFactor = 0D;
+            this.dockPanelMenu.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanelMenu.SavedIndex = 0;
+            this.dockPanelMenu.SavedSizeFactor = 1D;
             this.dockPanelMenu.Size = new System.Drawing.Size(231, 384);
             this.dockPanelMenu.Text = "Menu";
+            this.dockPanelMenu.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // dockPanelMenu_Container
             // 
@@ -240,7 +244,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 431);
-            this.Controls.Add(this.dockPanelMenu);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
