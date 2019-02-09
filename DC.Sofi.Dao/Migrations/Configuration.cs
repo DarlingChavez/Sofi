@@ -22,7 +22,7 @@ namespace DC.Sofi.Dao.Migrations
             //  to avoid creating duplicate seed data.
 
             //aplicada
-            //SeguridadSeed(context);
+            SeguridadSeed(context);
 
             
         }

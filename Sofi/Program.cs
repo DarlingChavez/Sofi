@@ -17,18 +17,20 @@ namespace Sofi
         [STAThread]
         static void Main()
         {
-            string feel = ConfigurationManager.AppSettings["SkinName"].ToString();
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            string feel = ConfigurationManager.AppSettings["SkinName"].ToString();
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(feel);
 
             string defaultConnectionString = ConfigurationManager.AppSettings["defaultcn"].ToString();
-            //Param.DefaultConnectionString = ConfigurationManager.ConnectionStrings[defaultConnectionString].ConnectionString;
             Param.DefaultConnectionString = defaultConnectionString;
+
+            string sysName = ConfigurationManager.AppSettings["sysname"];
+            Param.SystemName = sysName;
 
             Application.Run(new DC.Sofi.UI.WinForm.Seguridad.FrmMain());
         }

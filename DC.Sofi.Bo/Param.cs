@@ -7,6 +7,6 @@ namespace DC.Sofi.Bo
     {
         public static string DefaultConnectionString { get; set; }
         public static Usuario ActiveUser { get; set; }
-
+        public static string SystemName { get; set; }
     }
 }

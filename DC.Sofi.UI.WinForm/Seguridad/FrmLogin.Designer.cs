@@ -121,6 +121,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Autenticación";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEditUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditImagen.Properties)).EndInit();

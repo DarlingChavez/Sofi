@@ -67,5 +67,10 @@ namespace DC.Sofi.UI.WinForm.Seguridad
                 simpleButtonIngresar_Click(null, null);
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

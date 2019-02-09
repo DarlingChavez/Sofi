@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("Sofi")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Software de Inventario")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Sofi")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Maguito 2019")]
+[assembly: AssemblyTrademark("Maguito")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 

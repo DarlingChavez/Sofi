@@ -16,6 +16,17 @@ namespace DC.Sofi.UI.WinForm.Seguridad
         public FrmMain()
         {
             InitializeComponent();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
+        }
+
+        private void Default_StyleChanged(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
+            config.AppSettings.Settings["SkinName"].Value = DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveSkinName;
+            config.Save(System.Configuration.ConfigurationSaveMode.Full, true);
+            System.Configuration.ConfigurationManager.RefreshSection("appSettings");
+            this.Cursor = Cursors.Default;
         }
 
         private const string StrUsuario = "Usuario";
@@ -24,7 +35,12 @@ namespace DC.Sofi.UI.WinForm.Seguridad
         {
             SkinHelper.InitSkinPopupMenu(this.barSubItemTemas);
             //string defaultConnection = ConfigurationManager.AppSettings["DefaultConnectionString"].ToString();
-
+            using (FrmWait frm = new FrmWait(InitConnect))
+            {
+                frm.ShowDialog();
+                //frm.MdiParent = this;
+                //frm.Show();
+            }
             FrmLogin frmLogin = new FrmLogin();
             var result = frmLogin.ShowDialog();
             if(result == DialogResult.OK)
@@ -44,6 +60,7 @@ namespace DC.Sofi.UI.WinForm.Seguridad
 
             ucMenuPrincipal.DoubleClickEvent += UcMenuPrincipal_DoubleClickEvent;
         }
+        
 
         private void UcMenuPrincipal_DoubleClickEvent(object tag)
         {
@@ -119,5 +136,26 @@ namespace DC.Sofi.UI.WinForm.Seguridad
                     break;
             }
         }
+
+        private void FrmMain_Shown(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void InitConnect()
+        {
+            try
+            {
+                UsuarioBo usuarioBo = new UsuarioBo();
+                var entity = usuarioBo.Get("username");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Ocurrió el siguiente error al conectar con la base de datos: \n" + ex.Message,
+                    Properties.Resources.MessaBoxTittle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
     }
 }
