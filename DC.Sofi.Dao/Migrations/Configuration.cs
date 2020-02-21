@@ -1,11 +1,10 @@
 namespace DC.Sofi.Dao.Migrations
 {
+    using DC.Sofi.Domain.Seguridad;
     using System;
-    using System.Data.Entity;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using System.Collections.Generic;
-    using DC.Sofi.Domain.Seguridad;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DbContextSeguridad>
     {
@@ -24,7 +23,7 @@ namespace DC.Sofi.Dao.Migrations
             //aplicada
             SeguridadSeed(context);
 
-            
+
         }
 
         private void SeguridadSeed(DbContextSeguridad context)
