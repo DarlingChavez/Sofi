@@ -22,7 +22,7 @@ namespace DC.Sofi.Domain.Seguridad
         [Required]
         [StringLength(80)]
         public string Descripcion { get; set; }
-        [ForeignKey("UserName")]
+        
         public virtual ICollection<MenuByUser> MenuByUser { get; set; }
     }
 }

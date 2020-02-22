@@ -10,5 +10,10 @@ namespace DC.Sofi.Domain
             public const string Activo = "A";
             public const string Inactivo = "I";
         }
+        public sealed class TypeProduct
+        {
+            public const string Bien = "B";
+            public const string Servicio = "S";
+        }
     }
 }

@@ -46,6 +46,10 @@
     <Compile Include="BaseEntity.cs" />
     <Compile Include="GlobalChars.cs" />
     <Compile Include="GlobalWords.cs" />
+    <Compile Include="Inventario\Articulo.cs" />
+    <Compile Include="Inventario\Bodega.cs" />
+    <Compile Include="Inventario\Grupo.cs" />
+    <Compile Include="Inventario\Linea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\Menu.cs" />
     <Compile Include="Seguridad\MenuByUser.cs" />

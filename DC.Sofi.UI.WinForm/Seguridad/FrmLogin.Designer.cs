@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 212);
+            this.ClientSize = new System.Drawing.Size(469, 226);
             this.ControlBox = false;
             this.Controls.Add(this.pictureEditImagen);
             this.Controls.Add(this.simpleButtonExit);
@@ -116,8 +116,9 @@
             this.Controls.Add(this.textEditUsuario);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ShowIcon = false;
             this.Name = "FrmLogin";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Autenticación";
