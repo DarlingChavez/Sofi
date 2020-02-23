@@ -25,6 +25,6 @@ namespace DC.Sofi.Domain.Inventario
         [ForeignKey("PadreId")]
         public virtual Linea Padre { get; set; }
 
-        public virtual ICollection<Linea> Hijos { get; set; }
+        public virtual ICollection<Linea> ColeccionHijos { get; set; }
     }
 }

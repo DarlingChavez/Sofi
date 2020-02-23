@@ -1,9 +1,9 @@
-namespace DC.Sofi.Dao.Migrations
+namespace DC.Sofi.Dao.MigrationsSeguridad
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialDb : DbMigration
+    public partial class Inital : DbMigration
     {
         public override void Up()
         {
@@ -45,6 +45,7 @@ namespace DC.Sofi.Dao.Migrations
                     {
                         UserName = c.String(nullable: false, maxLength: 15),
                         Password = c.String(nullable: false, maxLength: 50),
+                        Descripcion = c.String(nullable: false, maxLength: 80),
                         Status = c.String(nullable: false, maxLength: 1),
                     })
                 .PrimaryKey(t => t.UserName);

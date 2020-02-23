@@ -1,9 +1,9 @@
-namespace DC.Sofi.Dao.Migrations
+namespace DC.Sofi.Dao.MigrationsInventario
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTables_ArticuloBodegaGrupoLinea : DbMigration
+    public partial class Inital : DbMigration
     {
         public override void Up()
         {
@@ -23,6 +23,40 @@ namespace DC.Sofi.Dao.Migrations
                 .ForeignKey("Inventario.Linea", t => t.LineaId)
                 .Index(t => t.GrupoId)
                 .Index(t => t.LineaId);
+            
+            CreateTable(
+                "Inventario.Existencia",
+                c => new
+                    {
+                        IdArticulo = c.Int(nullable: false),
+                        IdBodega = c.Int(nullable: false),
+                        CantidadVirtual = c.Int(nullable: false),
+                        TieneReserva = c.Int(nullable: false),
+                        IdReserva = c.Int(),
+                        CantidadReserva = c.Int(nullable: false),
+                        Fisico = c.Int(nullable: false),
+                        Status = c.String(nullable: false, maxLength: 1),
+                    })
+                .PrimaryKey(t => new { t.IdArticulo, t.IdBodega })
+                .ForeignKey("Inventario.Articulo", t => t.IdArticulo, cascadeDelete: true)
+                .ForeignKey("Inventario.Bodega", t => t.IdBodega, cascadeDelete: true)
+                .Index(t => t.IdArticulo)
+                .Index(t => t.IdBodega);
+            
+            CreateTable(
+                "Inventario.Bodega",
+                c => new
+                    {
+                        IdBodega = c.Int(nullable: false, identity: true),
+                        Descripcion = c.String(),
+                        TieneReserva = c.Boolean(nullable: false),
+                        EsRerserva = c.Boolean(nullable: false),
+                        IdReserva = c.Int(),
+                        Status = c.String(nullable: false, maxLength: 1),
+                    })
+                .PrimaryKey(t => t.IdBodega)
+                .ForeignKey("Inventario.Bodega", t => t.IdReserva)
+                .Index(t => t.IdReserva);
             
             CreateTable(
                 "Inventario.Grupo",
@@ -48,19 +82,6 @@ namespace DC.Sofi.Dao.Migrations
                 .ForeignKey("Inventario.Linea", t => t.PadreId)
                 .Index(t => t.PadreId);
             
-            CreateTable(
-                "Inventario.Bodega",
-                c => new
-                    {
-                        IdBodega = c.Int(nullable: false, identity: true),
-                        Descripcion = c.String(),
-                        TieneReserva = c.Boolean(nullable: false),
-                        EsRerserva = c.Boolean(nullable: false),
-                        BodegaReserva = c.Int(nullable: false),
-                        Status = c.String(nullable: false, maxLength: 1),
-                    })
-                .PrimaryKey(t => t.IdBodega);
-            
         }
         
         public override void Down()
@@ -68,12 +89,19 @@ namespace DC.Sofi.Dao.Migrations
             DropForeignKey("Inventario.Articulo", "LineaId", "Inventario.Linea");
             DropForeignKey("Inventario.Linea", "PadreId", "Inventario.Linea");
             DropForeignKey("Inventario.Articulo", "GrupoId", "Inventario.Grupo");
+            DropForeignKey("Inventario.Existencia", "IdBodega", "Inventario.Bodega");
+            DropForeignKey("Inventario.Bodega", "IdReserva", "Inventario.Bodega");
+            DropForeignKey("Inventario.Existencia", "IdArticulo", "Inventario.Articulo");
             DropIndex("Inventario.Linea", new[] { "PadreId" });
+            DropIndex("Inventario.Bodega", new[] { "IdReserva" });
+            DropIndex("Inventario.Existencia", new[] { "IdBodega" });
+            DropIndex("Inventario.Existencia", new[] { "IdArticulo" });
             DropIndex("Inventario.Articulo", new[] { "LineaId" });
             DropIndex("Inventario.Articulo", new[] { "GrupoId" });
-            DropTable("Inventario.Bodega");
             DropTable("Inventario.Linea");
             DropTable("Inventario.Grupo");
+            DropTable("Inventario.Bodega");
+            DropTable("Inventario.Existencia");
             DropTable("Inventario.Articulo");
         }
     }

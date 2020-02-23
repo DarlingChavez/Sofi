@@ -28,7 +28,7 @@ namespace DC.Sofi.Domain.Seguridad
         [StringLength(150)]
         public string NombreAsembly { get; set; }
 
-        public virtual ICollection<MenuByUser> MenuByUser { get; set; }
+        public virtual ICollection<MenuByUser> ColeccionMenuByUser { get; set; }
 
     }
 }

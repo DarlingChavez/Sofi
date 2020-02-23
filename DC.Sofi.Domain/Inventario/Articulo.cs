@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -31,6 +32,8 @@ namespace DC.Sofi.Domain.Inventario
         [Required]
         [StringLength(1)]
         public string TipoProducto { get; set; }
+
+        public virtual ICollection<Existencia> ColeccionExistencia { get; set; }
 
         [NotMapped]
         public string DescripcionTipoProducto

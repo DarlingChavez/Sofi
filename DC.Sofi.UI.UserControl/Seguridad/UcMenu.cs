@@ -51,13 +51,16 @@ namespace DC.Sofi.UI.UserControl.Seguridad
             {
                 e.Graphics.FillRectangle(SystemBrushes.Window, e.Bounds);
                 var left = e.EditViewInfo.ContentRect.Left;
-                Rectangle rectanguloTexto = new Rectangle(left,e.EditViewInfo.ContentRect.Top,
-                    Convert.ToInt32(e.Graphics.MeasureString(e.CellText, lista.Font).Width + 1),
-                    Convert.ToInt32(e.Graphics.MeasureString(e.CellText, lista.Font).Height));
+                var top = e.EditViewInfo.ContentRect.Top;
+                var width = e.EditViewInfo.ContentRect.Width;// Convert.ToInt32(e.Graphics.MeasureString(e.CellText, lista.Font).Width + 1);
+                var heigth = e.EditViewInfo.ContentRect.Height; //Convert.ToInt32(e.Graphics.MeasureString(e.CellText, lista.Font).Height);
+                
+                Rectangle rectanguloTexto = new Rectangle(left,top,width,heigth);
 
-                Rectangle rectanguloBase = new Rectangle(left-3, 0,lista.Width,150);
+                Rectangle rectanguloBase = new Rectangle(left-3, 0,lista.Width,180);
 
                 e.Graphics.FillRectangle(SystemBrushes.Highlight, rectanguloBase);
+                lista.Font = new Font(lista.Font.FontFamily, lista.Font.Size, FontStyle.Bold, lista.Font.Unit);
                 e.Graphics.DrawString(e.CellText, lista.Font, SystemBrushes.HighlightText, rectanguloTexto);
                 e.Handled = true;
             }
@@ -70,6 +73,54 @@ namespace DC.Sofi.UI.UserControl.Seguridad
                 this.treeListMenu.ExpandAll();
             }
         }
-        
+
+        private void treeListMenu_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            var nodo = this.treeListMenu.FocusedNode;
+            switch(e.KeyCode){
+                case System.Windows.Forms.Keys.Right:
+                    {
+                        if (nodo.HasChildren)
+                            nodo.Expand();
+                        break;
+                    }
+                case System.Windows.Forms.Keys.Left:
+                    {
+                        nodo.Collapse();
+                        break;
+                    }
+                case System.Windows.Forms.Keys.Up:
+                    {
+                        if(nodo == this.treeListMenu.GetNodeList().Where(n=>n.Visible==true).First())
+                        {
+                            this.searchControlMenu.Focus();
+                        }
+                        break;
+                    }
+            }
+        }
+
+        private void searchControlMenu_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case System.Windows.Forms.Keys.Down:
+                    {
+                        this.treeListMenu.Focus();
+                        this.treeListMenu.SelectNode(this.treeListMenu.Nodes[this.treeListMenu.TopVisibleNodeIndex]);
+                        e.Handled = true;
+                        break;
+                    }
+            }
+        }
+
+        private void treeListMenu_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                var tag = treeListMenu.GetDataRecordByNode(this.treeListMenu.FocusedNode);
+                DoubleClickEvent(tag);
+            }
+        }
     }
 }

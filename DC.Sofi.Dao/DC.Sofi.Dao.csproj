@@ -50,24 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="DbContextInventario.cs" />
     <Compile Include="DbContextSeguridad.cs" />
-    <Compile Include="Migrations\201901162128369_InitialDb.cs" />
-    <Compile Include="Migrations\201901162128369_InitialDb.Designer.cs">
-      <DependentUpon>201901162128369_InitialDb.cs</DependentUpon>
+    <Compile Include="MigrationsInventario\202002221500045_Inital.cs" />
+    <Compile Include="MigrationsInventario\202002221500045_Inital.Designer.cs">
+      <DependentUpon>202002221500045_Inital.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201901232015456_DescripcionUsuario.cs" />
-    <Compile Include="Migrations\201901232015456_DescripcionUsuario.Designer.cs">
-      <DependentUpon>201901232015456_DescripcionUsuario.cs</DependentUpon>
+    <Compile Include="MigrationsInventario\Configuration.cs" />
+    <Compile Include="MigrationsSeguridad\202002221458284_Inital.cs" />
+    <Compile Include="MigrationsSeguridad\202002221458284_Inital.Designer.cs">
+      <DependentUpon>202002221458284_Inital.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002220141362_AddTables_ArticuloBodegaGrupoLinea.cs" />
-    <Compile Include="Migrations\202002220141362_AddTables_ArticuloBodegaGrupoLinea.Designer.cs">
-      <DependentUpon>202002220141362_AddTables_ArticuloBodegaGrupoLinea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002220213536_BodegaReserva_Nullable.cs" />
-    <Compile Include="Migrations\202002220213536_BodegaReserva_Nullable.Designer.cs">
-      <DependentUpon>202002220213536_BodegaReserva_Nullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MigrationsSeguridad\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,17 +75,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901162128369_InitialDb.resx">
-      <DependentUpon>201901162128369_InitialDb.cs</DependentUpon>
+    <EmbeddedResource Include="MigrationsInventario\202002221500045_Inital.resx">
+      <DependentUpon>202002221500045_Inital.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901232015456_DescripcionUsuario.resx">
-      <DependentUpon>201901232015456_DescripcionUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002220141362_AddTables_ArticuloBodegaGrupoLinea.resx">
-      <DependentUpon>202002220141362_AddTables_ArticuloBodegaGrupoLinea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002220213536_BodegaReserva_Nullable.resx">
-      <DependentUpon>202002220213536_BodegaReserva_Nullable.cs</DependentUpon>
+    <EmbeddedResource Include="MigrationsSeguridad\202002221458284_Inital.resx">
+      <DependentUpon>202002221458284_Inital.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

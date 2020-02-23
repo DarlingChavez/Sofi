@@ -61,13 +61,14 @@
             this.searchControlMenu.Name = "searchControlMenu";
             this.searchControlMenu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton(),
             new DevExpress.XtraEditors.Repository.MRUButton()});
             this.searchControlMenu.Properties.Client = this.treeListMenu;
             this.searchControlMenu.Properties.ShowMRUButton = true;
+            this.searchControlMenu.Properties.ShowSearchButton = false;
             this.searchControlMenu.Size = new System.Drawing.Size(238, 20);
             this.searchControlMenu.TabIndex = 1;
             this.searchControlMenu.TextChanged += new System.EventHandler(this.searchControlMenu_TextChanged);
+            this.searchControlMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchControlMenu_KeyDown);
             // 
             // treeListMenu
             // 
@@ -88,6 +89,8 @@
             this.treeListMenu.TabIndex = 0;
             this.treeListMenu.CustomDrawNodeCell += new DevExpress.XtraTreeList.CustomDrawNodeCellEventHandler(this.treeListMenu_CustomDrawNodeCell);
             this.treeListMenu.DoubleClick += new System.EventHandler(this.treeListMenu_DoubleClick);
+            this.treeListMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeListMenu_KeyDown);
+            this.treeListMenu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeListMenu_KeyPress);
             // 
             // treeListColumnDescripcion
             // 

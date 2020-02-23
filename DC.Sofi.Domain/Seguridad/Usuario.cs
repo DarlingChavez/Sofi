@@ -23,6 +23,6 @@ namespace DC.Sofi.Domain.Seguridad
         [StringLength(80)]
         public string Descripcion { get; set; }
         
-        public virtual ICollection<MenuByUser> MenuByUser { get; set; }
+        public virtual ICollection<MenuByUser> ColeccionMenuByUser { get; set; }
     }
 }

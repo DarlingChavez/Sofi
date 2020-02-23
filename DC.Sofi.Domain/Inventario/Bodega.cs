@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -24,5 +25,8 @@ namespace DC.Sofi.Domain.Inventario
         public int? IdReserva { get; set; }
         [ForeignKey("IdReserva")]
         public Bodega BodegaReserva { get; set; }
+
+        public virtual ICollection<Existencia> ColeccionExistencia { get; set; }
+
     }
 }

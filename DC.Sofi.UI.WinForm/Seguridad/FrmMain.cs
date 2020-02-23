@@ -49,7 +49,7 @@ namespace DC.Sofi.UI.WinForm.Seguridad
                 MenuBo menuBo = new MenuBo();
                 var listMenu = menuBo.MenuOfUser(Param.ActiveUser.UserName);
                 ucMenuPrincipal.DataSource = listMenu;
-                barStaticItemUsuario.Caption = string.Format("{0} : {1}",StrUsuario,Param.ActiveUser.UserName);
+                barStaticItemUsuario.Caption = string.Format("{0} : {1}",StrUsuario,Param.ActiveUser.Descripcion);
                 dockPanelMenu.Show();
                 dockPanelMenu_Container.Focus();
             }
@@ -61,7 +61,6 @@ namespace DC.Sofi.UI.WinForm.Seguridad
             ucMenuPrincipal.DoubleClickEvent += UcMenuPrincipal_DoubleClickEvent;
         }
         
-
         private void UcMenuPrincipal_DoubleClickEvent(object tag)
         {
             Domain.Seguridad.Menu menu = (Domain.Seguridad.Menu)tag;
@@ -86,11 +85,12 @@ namespace DC.Sofi.UI.WinForm.Seguridad
                 var existsForm = this.MdiChildren.Where(x => x.Name.Equals(shortName)).FirstOrDefault();
                 if (existsForm != null)
                 {
-                    existsForm.Activate();
+                    tabbedViewPrincipal.ActivateDocument(existsForm);
                     return;
                 }
                 object formObject = Activator.CreateInstance(type);
                 Form form = (Form)formObject;
+                form.Name = shortName;
                 form.Text = menu.Descripcion;
                 form.MdiParent = this;
                 form.Tag = menu;
